@@ -8,10 +8,6 @@ app.set("port", port);
 
 app.get(`/`, (req, res) => {
 
-  const req = {
-    test : test.value,
-    result : result.value,
-  };
 
   console.log(req)
   res.status(200);
@@ -20,11 +16,6 @@ app.get(`/`, (req, res) => {
 
 app.post(`/post`, (req, res) => {
 
-  const req = {
-    test : test.value,
-    result : result.value,
-  };
-  
   console.log(req)
   res.status(200);
   res.send(req);
