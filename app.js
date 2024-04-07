@@ -7,15 +7,27 @@ const port = 3000;
 app.set("port", port);
 
 app.get(`/`, (req, res) => {
-  console.log(req.query);
+
+  const req = {
+    test : test.value,
+    result : result.value,
+  };
+
+  console.log(req)
   res.status(200);
-  res.send({"result": "GET 호출"});
+  res.send(req);
 })
 
 app.post(`/post`, (req, res) => {
-  console.log(req.body);
+
+  const req = {
+    test : test.value,
+    result : result.value,
+  };
+  
+  console.log(req)
   res.status(200);
-  res.send({"result": "POST 호출"});
+  res.send(req);
 })
 
 app.listen(port, () => console.log("Listening on", port));
