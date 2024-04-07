@@ -1,33 +1,27 @@
-var express = require('express')
-var http = require('http');
-var app = express();
-var bodyParser = require('body-parser')
+const express = require("express");
+
+const app = express();
+
+const port = 3000;
+
+app.set("port", port);
 
 app.use(bodyParser.urlencoded({extended: false}))
+
 app.get(`/`, (req, res) => {
   console.log(req.query);
   res.status(200);
+  res.send(req.query);
   res.send({"result": "GET 호출"});
 })
 
-app.post(`/`, (req, res) => {
+app.post(`/post`, (req, res) => {
   console.log(req.body);
   res.status(200);
+  res.send(req.body)
   res.send({"result": "POST 호출"});
 })
 
-app.put(`/:id`, (req, res) => {
-  console.log(`내용 PrimaryKey : ${req.params.id}`)
-  console.log(req.body);
-  res.send({"result": "UPDATE 호출"});
-})
+app.listen(port, () => console.log("Listening on", port));
 
-app.delete(`/:id`, (req, res) => {
-  console.log(req.params.id);
-  console.log(req.path)
-  res.send({"result": "DELETE 호출"});
-})
-
-app.listen(3000, () => {
-  console.log(`서버 실행, 포트 번호 3000`);
-});
+module.exports = app;
