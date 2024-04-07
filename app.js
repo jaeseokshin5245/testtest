@@ -6,8 +6,6 @@ const port = 3000;
 
 app.set("port", port);
 
-app.use(bodyParser.urlencoded({extended: false}))
-
 app.get(`/`, (req, res) => {
   console.log(req.query);
   res.status(200);
