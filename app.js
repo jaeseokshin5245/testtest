@@ -11,12 +11,14 @@ app.get('/', (req, res) => {
   res.send('get success')
 });
 
+
 app.post('/post', (req, res) => {
   res.status(200);
-  console.log("POST 호출 / data : " + req.body.data);
-  console.log('path : ' + req.path);
+  console.log("POST 호출 / data : " + req.body.test);
+  console.log("POST 호출 / data : " + req.body.result);
   res.send('post success');
 });
+
 
 app.put('/put/:id', (req, res) => {
   res.status(200);
