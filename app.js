@@ -8,7 +8,8 @@ app.set("port", port);
 
 app.get('/', (req, res) => {
   res.status(200);
-  console.log("GET 호출 / data : " + req.query.data);
+  console.log("GET 호출 / data : " + req.query.test);
+  console.log("GET 호출 / data : " + req.query.result);
   console.log('path : ' + req.path);
   res.send('get success')
 });
