@@ -15,8 +15,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/post', (req, res) => {
-  console.log("POST 호출 / data : " + req.test);
-  console.log("POST 호출 / data : " + req.result);
+  console.log("POST 호출 / data : " + req.body.data);
   res.send('post success');
 });
 
