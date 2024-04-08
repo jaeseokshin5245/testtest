@@ -1,25 +1,36 @@
 const express = require("express");
-
 const app = express();
-
 const port = 3000;
 
 app.set("port", port);
 
-app.get(`/`, (req, res) => {
-
-
-  console.log(req)
+app.get('/', (req, res) => {
   res.status(200);
-  res.send(req);
-})
+  console.log("GET 호출 / data : " + req.query.data);
+  console.log('path : ' + req.path);
+  res.send('get success')
+});
 
-app.post(`/post`, (req, res) => {
-
-  console.log(req)
+app.post('/post', (req, res) => {
   res.status(200);
-  res.send(req);
-})
+  console.log("POST 호출 / data : " + req.body.data);
+  console.log('path : ' + req.path);
+  res.send('post success');
+});
+
+app.put('/put/:id', (req, res) => {
+  res.status(200);
+  console.log("PUT 호출 / data : " + req.parmas.id);
+  console.log('path : ' + req.path);
+  res.send('put success');
+});
+
+app.delete('/delete/:id', (req, res) => {
+  res.status(200);
+  console.log("DELETE 호출 / data : " + req.query.id);
+  console.log('path : ' + req.path);
+  res.send('delete success');
+});
 
 app.listen(port, () => console.log("Listening on", port));
 
