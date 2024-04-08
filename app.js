@@ -8,15 +8,15 @@ app.set("port", port);
 
 app.get('/', (req, res) => {
   res.status(200);
-  console.log("GET 호출 / data : " + req.query.test);
-  console.log("GET 호출 / data : " + req.query.result);
+  console.log("GET 호출 / data : " + req.query.body);
   console.log('path : ' + req.path);
   res.send('get success')
 });
 
 
 app.post('/post', (req, res) => {
-  console.log("POST 호출 / data : " + req.body.data);
+  console.log("POST 호출 / data : " + req.body.test);
+  console.log("POST 호출 / data : " + req.body.result);
   res.send('post success');
 });
 
