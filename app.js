@@ -4,6 +4,7 @@ const port = 3000;
 
 app.set("port", port);
 
+
 app.get('/', (req, res) => {
   res.status(200);
   console.log("GET 호출 / data : " + req.query.data);
@@ -14,8 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/post', (req, res) => {
   res.status(200);
-  console.log("POST 호출 / data : " + req.test);
-  console.log("POST 호출 / data : " + req.result);
+  console.log("POST 호출 / data : " + req.body);
   res.send('post success');
 });
 
