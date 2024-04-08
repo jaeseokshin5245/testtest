@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+var bodyParser = require('body-parser')
 
+app.use(bodyParser.urlencoded({extended: false}))
 app.set("port", port);
-
 
 app.get('/', (req, res) => {
   res.status(200);
@@ -14,7 +15,6 @@ app.get('/', (req, res) => {
 
 
 app.post('/post', (req, res) => {
-  res.status(200);
   console.log("POST 호출 / data : " + req.body);
   res.send('post success');
 });
