@@ -6,9 +6,6 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
 app.set("port", port);
 
-const id = document.querySelector("id"),
-  result = document.querySelector("result");
-
 app.get('/', (req, res) => {
   res.status(200);
   console.log("GET 호출 / data : " + req.query.body);
