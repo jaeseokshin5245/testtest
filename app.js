@@ -31,7 +31,7 @@ app.post('/post', (req, res) => {
   console.log("======================================");
   console.log("id");
   console.log("======================================");
-  console.log("result");curl -X POST http://13.209.96.66:3000/post -H "Content-Type: application/json" -d '{"id": 123}'
+  console.log("result");
 
   res.send('post success');
 });
