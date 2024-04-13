@@ -16,6 +16,21 @@ app.get('/', (req, res) => {
 
 app.post('/post', (req, res) => {
   console.log("POST 호출 / data : " + req.body.data);
+  console.log(req)
+  console.log("======================================")
+  console.log(req.body)
+  console.log("======================================")
+  console.log(JSON(req))
+  console.log("======================================")
+  console.log(JSON(req.body))
+  console.log("======================================")
+  console.log(req.id)
+  console.log("======================================")
+  console.log(req.body.id)
+  console.log("======================================")
+  console.log(JSON(req.id))
+  console.log("======================================")
+  console.log(JSON(req.body.id))
   res.send('post success');
 });
 
