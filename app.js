@@ -6,6 +6,9 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
 app.set("port", port);
 
+const id = document.querySelector("id"),
+  result = document.querySelector("result");
+
 app.get('/', (req, res) => {
   res.status(200);
   console.log("GET 호출 / data : " + req.query.body);
@@ -13,16 +16,23 @@ app.get('/', (req, res) => {
   res.send('get success')
 });
 
+app.post('/post', (req, res) => { 
+  var id = req.body.id;
+  var result = req.body.result;
+  
+  console.log("POST 호출 / id : " + req.body.id);
+  console.log(req.body);
+  console.log("======================================");
+  console.log(req.id);
+  console.log("======================================");
+  console.log(req.body.id);
+  console.log("======================================");
+  console.log(req.body.result);
+  console.log("======================================");
+  console.log("id");
+  console.log("======================================");
+  console.log("result");curl -X POST http://13.209.96.66:3000/post -H "Content-Type: application/json" -d '{"id": 123}'
 
-app.post('/post', (req, res) => {
-  console.log("POST 호출 / data : " + req.body.data);
-  console.log(req)
-  console.log("======================================")
-  console.log(req.body)
-  console.log("======================================")
-  console.log(req.id)
-  console.log("======================================")
-  console.log(req.body.id)
   res.send('post success');
 });
 
