@@ -5,6 +5,7 @@ var bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.set("port", port);
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.status(200);
@@ -26,7 +27,6 @@ app.post('/post', (req, res) => {
   console.log(id.value);
   console.log("======================================");
   console.log(result.value);
-
   res.send('post success');
 });
 
