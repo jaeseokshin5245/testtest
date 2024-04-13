@@ -18,17 +18,14 @@ app.post('/post', (req, res) => {
   var result = req.body.result;
   
   console.log("POST 호출 / id : " + req.body.id);
-  console.log(req.body);
   console.log("======================================");
-  console.log(req.id);
+  console.log(id);
   console.log("======================================");
-  console.log(req.body.id);
+  console.log(result);
   console.log("======================================");
-  console.log(req.body.result);
+  console.log(id.value);
   console.log("======================================");
-  console.log("id");
-  console.log("======================================");
-  console.log("result");
+  console.log(result.value);
 
   res.send('post success');
 });
