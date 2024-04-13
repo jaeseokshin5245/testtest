@@ -15,14 +15,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/post', (req, res) => { 
-  var id = req.body.id;
-  console.log("POST 호출 / id : " + req.body.id);
-  console.log("======================================");
-  console.log(req.body);
-  console.log("======================================");
-  console.log(id);
-  console.log("======================================");
-  res.send('post success');
+  console.log("POST 호출 / id : " + req.body);
+  res.send({"result": "POST 응답"});
 });
 
 
