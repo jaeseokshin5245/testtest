@@ -16,17 +16,12 @@ app.get('/', (req, res) => {
 
 app.post('/post', (req, res) => { 
   var id = req.body.id;
-  var result = req.body.result;
-  
   console.log("POST 호출 / id : " + req.body.id);
+  console.log("======================================");
+  console.log(req.body);
   console.log("======================================");
   console.log(id);
   console.log("======================================");
-  console.log(result);
-  console.log("======================================");
-  console.log(id.value);
-  console.log("======================================");
-  console.log(result.value);
   res.send('post success');
 });
 
